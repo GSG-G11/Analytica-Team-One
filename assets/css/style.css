@@ -53,6 +53,18 @@
   width: 50%;
 }
 
+.right-products-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.right-products-header i {
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
 .sort-select {
   width: 12rem;
   padding: 0.8rem;
