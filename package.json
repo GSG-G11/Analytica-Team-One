@@ -1,0 +1,22 @@
+{
+  "name": "analytica-team-one",
+  "version": "1.0.0",
+  "description": "Ecommerce Project made by: Abedalrahman Shamia, Amran Elmasri, Braa Ferwana, Najlaa Abuouda",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSG-G11/Analytica-Team-One.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GSG-G11/Analytica-Team-One/issues"
+  },
+  "homepage": "https://github.com/GSG-G11/Analytica-Team-One#readme",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}
