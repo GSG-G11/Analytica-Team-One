@@ -11,9 +11,150 @@
   --shadow: #050a30;
   --tint: #1f8bff;
   --footer-bg: #000;
+  --white:#fff;
+  --section-bg:#F3F4F4;
+  --black:#000;
+  --shadow-hover: 0 2px 15px rgb(0 0 0 / 20%);
 }
 
 .container {
   width: 85%;
   margin: auto;
 }
+
+/* Start Nav Section */
+ nav{
+ padding:10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+.logo {
+  width:10%;
+} 
+  img{
+    max-width: 100%;
+    width: 50%;
+  object-fit: cover;
+}
+form{
+  width:40%;
+}
+input[type="search"]{
+  background-color: var(--white);
+  width:100%;
+  padding:15px;
+  outline: none;
+  border-radius: 6px;
+  border:1px solid #ddd;
+}
+.cart{
+  width:20%;
+  color:var(--main-color);
+  font-size: 35px;
+  text-align: center;
+
+}
+
+/* End Nav Section */
+
+/* Start header section */
+header{
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-color);
+}
+ .menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+li {
+  list-style: none;
+}
+.link.active{
+  position: relative;
+}
+.link.active::after{
+  content: ' ';
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #fff;
+  transform: translate(-50%,-50%);
+}
+
+.link{
+  text-decoration: none;
+  margin-right:40px;
+  color: var(--black);
+  font-size: 20px;
+  font-weight: 500;
+  color:var(--white);
+
+}
+
+/* End Header section */
+
+/* Start hero  */
+.row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   
+}
+.hero{
+  background-color: var(--section-bg) ;
+  padding:50px 0
+}
+.img-hero{
+  object-fit: cover;
+  width:50%; 
+}
+
+.info-hero{
+  width:28%;
+  line-height: 1.5;
+}
+.info-hero h1{
+  font-weight: 400;
+  font-size: 40px;
+}
+.info-hero span{
+  font-size: 35px;
+  font-weight: 700;
+  color:#FF4B4B;
+  text-align: center;
+  width:25%;
+  line-height: 1.8;
+  background-color: rgba(255,255,255,0.8);
+  display: block;
+  margin-bottom: 60px ;
+  margin-top: 10px;
+}
+.btn{
+  margin-top: 30px;
+  font-weight: 700;
+  color:var(--white);
+  text-decoration: none;
+  font-size: 20px;
+  background-color: var(--main-color);
+  width:35%;
+  padding:20px 30px;
+  border-radius: 8px;
+  transition: 0.5s;
+}
+.btn:hover{
+  background-color: var(--tint);
+  box-shadow: var(--shadow-hover)
+
+}
+
+/* End hero */
+
