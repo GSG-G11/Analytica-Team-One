@@ -20,18 +20,30 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="stylesheet" href="./seller.css" />
     <title>Analytica</title>
   </head>
   <body>
-    <div class="nav">
-      <br />
-      <br />
-      <br />
-    </div>
+    <!-- Start Navbar section -->
+    <nav style=" border-bottom: 2px solid #1f8bff;">
+        <a href="#" class="logo"><img src="../img/logo.png" alt="logo-img" /></a>
+        <form class="search" action="">
+          <input type="search" id="search" name="search" placeholder="Search" />
+          <!-- <i class="fas fa-search "></i> -->
+        </form>
+        <!-- <div class="seller-button">
+          <button>I'm a Seller</button>
+        </div> -->
+        <a href="./cart/cart.html" class="cart" id="cart">
+            <i class="fas fa-home"></i>
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+      </nav>
+      <!-- End navbar Section -->
+      <br><br>
     <!-- form to entry product -->
-    <div class="container">
+    <div class="container2">
       <form>
         <label for="name">Product Name</label>
         <input type="text" id="name" name="name" placeholder="Your Product name.." />
@@ -68,5 +80,62 @@
         <input type="submit" value="Add Product" />
       </form>
     </div>
+
+        <!-- footer -->
+        <footer id="footer">
+            <div class="top-footer">
+              <div class="footer-part">
+                <p class="footer-part-title">Get to Know Us</p>
+                <ul class="footer-links">
+                  <li class="footer-link">About us</li>
+                  <li class="footer-link">Our Services</li>
+                  <li class="footer-link">Stores</li>
+                  <li class="footer-link">Contact us</li>
+                  <li class="footer-link">Order Tracking</li>
+                </ul>
+              </div>
+              <div class="footer-part">
+                <p class="footer-part-title">Customer Service</p>
+                <ul class="footer-links">
+                  <li class="footer-link">My account</li>
+                  <li class="footer-link">Order Tracking</li>
+                  <li class="footer-link">Pricing Plans</li>
+                  <li class="footer-link">Terms & Conditions</li>
+                  <li class="footer-link">Our Team</li>
+                  <li class="footer-link">FAQ</li>
+                </ul>
+              </div>
+              <div class="footer-part">
+                <p class="footer-part-title">Quick Links</p>
+                <ul class="footer-links">
+                  <li class="footer-link">Smartphones</li>
+                  <li class="footer-link">Headphones</li>
+                  <li class="footer-link">Laptop & Tablet</li>
+                  <li class="footer-link">Gadgets</li>
+                </ul>
+              </div>
+      
+              <div class="sign-up">
+                <p class="footer-part-title">Sign up to Newsletter</p>
+                <div class="sign-up-form">
+                  <input type="email" placeholder="Your Email Address.." class="sign-up-input" />
+                  <i class="fab fa-telegram"></i>
+                </div>
+                <p class="sign-up-ad">
+                  Stay up to date with all the actions that we are saved for all our customers
+                </p>
+                <div class="social-links">
+                  <i class="fab fa-facebook"></i>
+                  <i class="fab fa-twitter"></i>
+                  <i class="fab fa-linkedin"></i>
+                  <i class="fab fa-pinterest"></i>
+                  <i class="fab fa-youtube"></i>
+                </div>
+              </div>
+            </div>
+            <div class="bottom-footer">
+              <p class="rights">© 2022 Analytica, All Rights Reserved</p>
+            </div>
+          </footer>
   </body>
 </html>
