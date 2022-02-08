@@ -17,3 +17,124 @@
   width: 85%;
   margin: auto;
 }
+
+#footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.8rem;
+  width: 100%;
+  background-color: #000;
+  padding: 3.2rem 0 2.4rem 0;
+}
+
+.top-footer {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 2.4rem;
+  color: #fff;
+  position: relative;
+}
+
+.top-footer::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  width: 85%;
+  height: 1px;
+  background-color: #fff;
+}
+.footer-part {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.footer-part-title {
+  font-weight: 500;
+}
+
+.footer-links {
+  list-style-type: none;
+}
+
+.footer-link {
+  padding: 0.4rem 0;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.footer-link:hover {
+  color: var(--main-color);
+  text-decoration: underline;
+}
+
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  flex-basis: 25%;
+}
+
+.sign-up-form {
+  display: flex;
+  align-items: center;
+}
+
+.sign-up-form input {
+  width: 14rem;
+  padding: 0.6rem 0.8rem;
+  border: 2px solid var(--tint);
+  background-color: black;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+}
+
+.sign-up-form input::placeholder {
+  color: white;
+}
+
+.sign-up-form input:focus {
+  color: black;
+  background-color: white;
+}
+
+.sign-up-form i {
+  color: #fff;
+  padding: 0.76rem;
+  background-color: var(--tint);
+  cursor: pointer;
+}
+
+.sign-up-ad {
+  white-space: pre-line;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.social-links {
+  display: flex;
+  gap: 0.2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.social-links i {
+  padding: 0.6rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.social-links .fab:hover {
+  background-color: white;
+  color: var(--tint);
+  transform: translateY(-5px);
+}
+
+.bottom-footer {
+  color: #aaa;
+  font-size: 0.8rem;
+  margin-top: 2.4rem;
+  margin-left: 6.8rem;
+}
