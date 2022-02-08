@@ -24,21 +24,23 @@
 
 /* Start Nav Section */
  nav{
- padding:10px 0;
+  height: 80px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;  
 }
 .logo {
   width:10%;
+  text-align: center;
 } 
   img{
     max-width: 100%;
     width: 50%;
-  object-fit: cover;
+    object-fit: cover;
 }
 form{
   width:40%;
+ 
 }
 input[type="search"]{
   background-color: var(--white);
@@ -49,26 +51,28 @@ input[type="search"]{
   border:1px solid #ddd;
 }
 .cart{
-  width:20%;
+  width:10%;
   color:var(--main-color);
   font-size: 35px;
   text-align: center;
-
+  text-decoration: none;
 }
-
+.total-cart{
+  color:var(--secondary-color);
+  font-size: 18px;
+  font-weight: 500;
+}
 /* End Nav Section */
 
 /* Start header section */
 header{
   height: 75px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: var(--main-color);
 }
  .menu{
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 
 }
@@ -81,10 +85,10 @@ li {
 .link.active::after{
   content: ' ';
   position: absolute;
-  bottom: -22px;
+  bottom: -20px;
   left: 50%;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background-color: #fff;
   transform: translate(-50%,-50%);
@@ -92,9 +96,8 @@ li {
 
 .link{
   text-decoration: none;
-  margin-right:40px;
   color: var(--black);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   color:var(--white);
 
@@ -111,7 +114,7 @@ li {
 }
 .hero{
   background-color: var(--section-bg) ;
-  padding:50px 0
+  padding:30px 0
 }
 .img-hero{
   object-fit: cover;
