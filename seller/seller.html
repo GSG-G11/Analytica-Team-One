@@ -1,63 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <!-- Google Font -->
-       <link rel="preconnect" href="https://fonts.googleapis.com" />
-       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-       <link
-         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-         rel="stylesheet"
-       />
-   
-       <!-- Font Awesome -->
-       <link
-         rel="stylesheet"
-         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-         crossorigin="anonymous"
-         referrerpolicy="no-referrer"
-       />
-       <link rel="stylesheet" href="./assets/css/style.css" />
-       <link rel="stylesheet" href="./seller.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./seller.css" />
     <title>Analytica</title>
-</head>
-<body>
-<div class="nav">
-    <br>
-    <br>
-    <br>
-</div>
+  </head>
+  <body>
+    <div class="nav">
+      <br />
+      <br />
+      <br />
+    </div>
     <!-- form to entry product -->
     <div class="container">
-        <form>
-            <label for="name">Product Name</label>
-            <input type="text" id="name" name="name" placeholder="Your Product name..">
+      <form>
+        <label for="name">Product Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Product name.." />
 
-            <label for="description">Description</label>
-            <textarea id="description" name="description" placeholder="Your Product description.." style="height:100px"></textarea>
+        <label for="description">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          placeholder="Your Product description.."
+          style="height: 100px"
+        ></textarea>
 
+        <label for="category">Category</label>
+        <select id="category" name="category">
+          <option value="Laptop">Laptop</option>
+          <option value="Computer">Computer</option>
+          <option value="mouse">Mouse</option>
+          <option value="Headphones">Headphones</option>
+          <option value="Tablet">Tablet</option>
+        </select>
 
-            <label for="category">Category</label>
-            <select id="category" name="category">
-              <option value="Laptop">Laptop</option>
-              <option value="Computer">Computer</option>
-              <option value="mouse">mouse</option>
-              <option value="Headphones">Headphones</option>
-              <option value="Tablet">Tablet</option>
-            </select>
+        <label for="photo">Image URL</label>
+        <input type="text" id="photo" />
 
-            <label for="photo">Image URL</label>
-            <input type="text" id="photo" />
+        <label for="Price">Price</label>
+        <input
+          type="text"
+          id="Price"
+          name="Price"
+          style="width: 25%; margin-left: 20px ;"
+          placeholder="Your Product Price.."
+        />
 
-            <label for="Price">Price</label>
-            <input type="text" id="Price" name="Price" style="width: 25%; margin-left: 20px; ;" placeholder="Your Product Price..">
-
-            <input type="submit" value="Add Product">
-
-        </form>
+        <input type="submit" value="Add Product" />
+      </form>
     </div>
-</body>
+  </body>
 </html>
