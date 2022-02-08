@@ -17,6 +17,10 @@
   --shadow-hover: 0 2px 15px rgb(0 0 0 / 20%);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
   width: 85%;
   margin: auto;
@@ -30,7 +34,7 @@ nav {
   align-items: center;
 }
 .logo {
-  width: 10%;
+  width: 7%;
   text-align: center;
 }
 img {
@@ -55,6 +59,10 @@ input[type='search'] {
   font-size: 35px;
   text-align: center;
   text-decoration: none;
+}
+
+.cart.user {
+  margin-left: 3.2rem;
 }
 .total-cart {
   color: var(--secondary-color);

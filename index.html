@@ -31,19 +31,22 @@
         <input type="search" id="search" name="search" placeholder="Search" />
         <!-- <i class="fas fa-search "></i> -->
       </form>
-      <a href="./cart/cart.html" class="cart" id="cart">
-        <i class="fas fa-shopping-cart"></i>
-      </a>
+      <div class="icons">
+        <a href="./cart/cart.html" class="cart" id="cart">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+        <a href="./seller/seller.html" class="cart user"><i class="fas fa-user"></i></a>
+      </div>
     </nav>
     <!-- End navbar Section -->
     <!-- start header Section -->
     <header>
-      <div class="container">
+      <div class="container" id="home">
         <ul class="menu">
-          <li><a href="#" class="link active">Home</a></li>
-          <li><a href="#" class="link">Deals</a></li>
-          <li><a href="#" class="link">Product</a></li>
-          <li><a href="#" class="link">Contact us</a></li>
+          <li><a href="#home" class="link active">Home</a></li>
+          <li><a href="#deal" class="link">Hot Deal</a></li>
+          <li><a href="#products" class="link">Product</a></li>
+          <li><a href="#footer" class="link">Contact us</a></li>
         </ul>
       </div>
     </header>
@@ -52,7 +55,7 @@
     <div class="container">
       <!-- Start Hero Section -->
 
-      <section class="hero">
+      <section class="hero" id="deal">
         <div class="container">
           <div class="row">
             <div class="img-hero">
