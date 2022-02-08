@@ -25,8 +25,39 @@
     <title>Analytica</title>
 </head>
 <body>
+<div class="nav">
+    <br>
+    <br>
+    <br>
+</div>
+    <!-- form to entry product -->
     <div class="container">
-        
+        <form>
+            <label for="name">Product Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Product name..">
+
+            <label for="description">Description</label>
+            <textarea id="description" name="description" placeholder="Your Product description.." style="height:100px"></textarea>
+
+
+            <label for="category">Category</label>
+            <select id="category" name="category">
+              <option value="Laptop">Laptop</option>
+              <option value="Computer">Computer</option>
+              <option value="mouse">mouse</option>
+              <option value="Headphones">Headphones</option>
+              <option value="Tablet">Tablet</option>
+            </select>
+
+            <label for="photo">Image URL</label>
+            <input type="text" id="photo" />
+
+            <label for="Price">Price</label>
+            <input type="text" id="Price" name="Price" style="width: 25%; margin-left: 20px; ;" placeholder="Your Product Price..">
+
+            <input type="submit" value="Add Product">
+
+        </form>
     </div>
 </body>
 </html>
