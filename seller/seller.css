@@ -12,7 +12,7 @@
   --tint: #1f8bff;
   --footer-bg: #000;
 }
-.container {
+.container2 {
   width: 50%;
   margin: auto;
   border-radius: 5px;
@@ -35,7 +35,7 @@ textarea {
 }
 
 input[type='submit'] {
-  background-color: #04aa6d;
+  background-color: #1f8bff;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -52,5 +52,5 @@ input[type='submit'] {
 }
 
 input[type='submit']:hover {
-  background-color: #06c27d;
+  background-color: #0609c2;
 }
