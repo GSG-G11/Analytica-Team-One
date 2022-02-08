@@ -150,6 +150,7 @@ table td {
 table th {
     background-color: var(--main-color);
     color: white;
+    padding: 15px;
     
 }
 table td button{
@@ -157,6 +158,9 @@ table td button{
     color: white;
     cursor: pointer;
     border-radius: 3px;
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
 }
 .cam {
     height: 100px;
