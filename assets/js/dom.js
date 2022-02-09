@@ -1,10 +1,11 @@
 import productObject from './data.js';
+import {filterByCategory, filterByPrice, searchProducts} from './logic.js';
 
 const productsSection = document.querySelector('.products-cards');
 const priceSelect = document.querySelector('.price-select');
 const categorySelect = document.querySelector('.category-select');
-
-console.log(priceSelect);
+const searchInput = document.getElementsByName('search')[0];
+const heroSection = document.querySelector('.hero');
 
 //Render Products
 function renderProducts(arr) {
@@ -59,17 +60,18 @@ function clearInput(element) {
   element.innerHTML = '';
 }
 
-function filterByCategory(arr, category) {
-  const filteredArr = arr.filter(
-    product => product.category.toLowerCase() === category.toLowerCase()
-  );
-  return filteredArr;
-}
+searchInput.addEventListener('keyup', () => {
+  clearInput(heroSection);
+  clearInput(productsSection);
 
-function filterByPrice(arr, price) {
-  const filteredArr = arr.filter(product => product.price <= price);
-  return filteredArr;
-}
+  if (searchInput.value === '') {
+    heroSection.innerHTML = hero;
+    return renderProducts(productObject);
+  }
+
+  const searchArr = searchProducts(productObject, searchInput.value);
+  renderProducts(searchArr);
+});
 
 categorySelect.addEventListener('change', e => {
   const categoryValue = e.target.value;
@@ -90,5 +92,26 @@ priceSelect.addEventListener('change', e => {
   clearInput(productsSection);
   renderProducts(filterByPrice(productObject, price));
 });
+
+const hero = `<section class="hero" id="deal">
+<div class="">
+  <div class="row">
+    <div class="img-hero">
+      <img src="img/Laptop.png" alt="hero-img" />
+    </div>
+    <div class="info-hero">
+      <h1>ANALYTICA <strong> Store</strong></h1>
+      <p class="desc">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit eos odit ex
+        accusamus eaque vitae!
+      </p>
+      <div class="clickable">
+        <span> -30%</span>
+        <a href="#" class="btn"> See More</a>
+      </div>
+    </div>
+  </div>
+</div>
+</section>`;
 
 renderProducts(productObject);
