@@ -24,5 +24,6 @@ function addToCart(arr, product) {
 }
 
 export {filterByCategory, filterByPrice, searchProducts, addToCart};
-
+//To test Uncomment the following code:
 // module.exports = {filterByCategory, filterByPrice, searchProducts, addToCart};
+
