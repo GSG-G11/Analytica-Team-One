@@ -15,7 +15,7 @@ let arr = [...productObject];
 //get data from local storage
 const productStorage = localStorage.getItem('products'); // to get data in local storage
 
-if (!productStorage) {
+if (!productStorage || productStorage === '[]') {
   //if no storage found make new one
   localStorage.setItem('products', JSON.stringify(arr)); // to add datd file to local storage
 } //else convert it to array
@@ -52,13 +52,29 @@ const addProduct = ev => {
 
 PSubmit.addEventListener('click', addProduct);
 
+//delete product
+
+function removeProduct(e) {
+  // localStorage.removeItem(e);
+  console.log('clicked');
+  e.target.parentElement.parentElement.remove();
+
+  //remove from local storage
+  const productStorage = localStorage.getItem('products');
+  const productStorageArr = JSON.parse(productStorage);
+  const index = productStorageArr.findIndex(
+    product => product.id === e.target.parentElement.parentElement.id
+  );
+  productStorageArr.splice(index, 1);
+  localStorage.setItem('products', JSON.stringify(productStorageArr));
+}
+
 // add products to seller page
 
 const priceSelect = document.querySelector('.price-select');
 const categorySelect = document.querySelector('.category-select');
 const searchInput = document.getElementsByName('search')[0];
 const heroSection = document.querySelector('.hero');
-
 
 //Render Products
 function renderProducts(arr) {
@@ -69,17 +85,13 @@ function renderProducts(arr) {
 
     const icons = document.createElement('div');
     icons.classList.add('delete-edit');
-    const dele = document.createElement("i")
-    dele.classList.add("fa-solid","fa-circle-xmark")
-    icons.appendChild(dele)
-    const edit = document.createElement("i")
-    edit.classList.add("fas","fa-edit")
-    icons.appendChild(edit)
+    const dele = document.createElement('i');
+    dele.classList.add('fa-solid', 'fa-circle-xmark');
+    icons.appendChild(dele);
+    const edit = document.createElement('i');
+    edit.classList.add('fas', 'fa-edit');
+    icons.appendChild(edit);
     productCard.appendChild(icons);
-
-
-
-
 
     const productImageDiv = document.createElement('div');
     productImageDiv.classList.add('product-card-image');
@@ -122,3 +134,12 @@ function renderProducts(arr) {
     productAddCart.appendChild(productAddCartIcon);
   });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const pDelete = document.querySelectorAll('.fa-circle-xmark');
+
+  console.log(pDelete);
+  pDelete.forEach(btn => {
+    btn.addEventListener('click', removeProduct);
+  });
+});
