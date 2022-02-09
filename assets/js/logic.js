@@ -23,16 +23,13 @@ function addToCart(arr, product) {
   return arr;
 }
 
-const deleteItems = (id,arr) =>{
-const pro = arr.filter(product => {
-  return product.id !=id;
-})
-return pro;
-}
+const deleteItems = (id, arr) => {
+  const pro = arr.filter(product => {
+    return product.id != id;
+  });
+  return pro;
+};
 
-
-module.exports = {filterByCategory, filterByPrice, searchProducts, addToCart, deleteItems}
- //export {filterByCategory, filterByPrice, searchProducts, addToCart , deleteItems};
+export {filterByCategory, filterByPrice, searchProducts, addToCart, deleteItems};
 //To test Uncomment the following code:
-// module.exports = {filterByCategory, filterByPrice, searchProducts, addToCart};
-
+// module.exports = {filterByCategory, filterByPrice, searchProducts, addToCart, deleteItems};
