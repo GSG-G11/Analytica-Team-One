@@ -1,11 +1,9 @@
 import {deleteItems} from './logic.js';
 
 const cartContainer = document.querySelector('.cart-container-items');
-
+const totalPrice = document.querySelector('.cart-total-price');
 //Get Cart from Local Storage
 const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-console.log(cart);
 
 document.addEventListener('DOMContentLoaded', () => {
   const deleteBtns = document.querySelectorAll('.btn-danger');
@@ -24,6 +22,17 @@ document.addEventListener('DOMContentLoaded', () => {
       itemElement.remove();
     });
   });
+
+  //Total Price
+  const newTotal = cart.map(item => {
+    return +item.price.slice(0, -1);
+  });
+
+  const total = newTotal.reduce((acc, curr) => {
+    return acc + curr;
+  });
+
+  totalPrice.textContent = `$${total}`;
 });
 
 if (cart.length === 0) {
@@ -57,14 +66,6 @@ function renderCartItems(arr) {
     price.classList.add('price');
     price.textContent = `$${item.price}`;
     itemPrice.appendChild(price);
-
-    const itemQuantity = document.createElement('td');
-    itemElement.appendChild(itemQuantity);
-
-    const quantity = document.createElement('input');
-    quantity.type = 'number';
-
-    itemQuantity.appendChild(quantity);
 
     const deleteContainer = document.createElement('td');
     itemElement.appendChild(deleteContainer);
