@@ -99,3 +99,5 @@ const productObject = [
 
   ];
 
+
+  export default productObject
