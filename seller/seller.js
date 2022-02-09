@@ -1,48 +1,55 @@
 import productObject from '../assets/js/data.js';
 // add product to data file
-const pName = document.querySelector("#name");
-const pDescription = document.querySelector("#description");
-const pCategory = document.querySelector("#category");
-const pPhoto = document.querySelector("#photo");
-const pPrice = document.querySelector("#Price");
-const PSubmit = document.querySelector("#submit");
-const pForm = document.getElementById("form");
+const pName = document.querySelector('#name');
+const pDescription = document.querySelector('#description');
+const pCategory = document.querySelector('#category');
+const pPhoto = document.querySelector('#photo');
+const pPrice = document.querySelector('#Price');
+const PSubmit = document.querySelector('#submit');
+const pForm = document.getElementById('form');
 const productsSection = document.querySelector('.products-cards');
 
+let arr = [...productObject];
 
-let arr=[...productObject];
+//get data from local storage
+const productStorage = localStorage.getItem('products'); // to get data in local storage
 
-//get data from local storage 
-localStorage.setItem('products', JSON.stringify(arr)) // to add datd file to local storage 
-const productStorage = localStorage.getItem('products'); // to get data in local storage 
+if (!productStorage) {
+  //if no storage found make new one
+  localStorage.setItem('products', JSON.stringify(arr)); // to add datd file to local storage
+} //else convert it to array
+
 const productStorageArr = JSON.parse(productStorage); // to convert to array of object
 
+document.addEventListener('DOMContentLoaded', () => {
+  renderProducts(productStorageArr);
+});
 
 //add new object to array include the new product detailes
 
-const addProduct = (ev)=> {
-    ev.preventDefault(); 
-    let product={
-        id : Date.now(),
-        name : pName.value,
-        price : pPrice.value,
-        category : pCategory.value,
-        description : pDescription.value,
-        imgUrl : pPhoto.value
-    }
+const addProduct = ev => {
+  ev.preventDefault();
+  let product = {
+    id: Date.now(),
+    name: pName.value,
+    price: pPrice.value,
+    category: pCategory.value,
+    description: pDescription.value,
+    imgUrl: pPhoto.value,
+  };
 
-    productStorageArr.push(product);
-    pForm.reset();
-    // console.log(arr);
+  productStorageArr.push(product);
+  pForm.reset();
+  // console.log(arr);
 
-    //add product to local storage
-    localStorage.setItem('products',JSON.stringify(productStorageArr));
-    productsSection.innerHTML='';
-    renderProducts(productStorageArr);
-}
+  //add product to local storage
 
-PSubmit.addEventListener('click', addProduct)
+  localStorage.setItem('products', JSON.stringify(productStorageArr));
+  productsSection.innerHTML = '';
+  renderProducts(productStorageArr);
+};
 
+PSubmit.addEventListener('click', addProduct);
 
 // add products to seller page
 
@@ -99,5 +106,3 @@ function renderProducts(arr) {
     productAddCart.appendChild(productAddCartIcon);
   });
 }
-
-renderProducts(productStorageArr);
