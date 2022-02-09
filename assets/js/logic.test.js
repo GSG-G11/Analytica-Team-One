@@ -110,4 +110,53 @@ describe('Homepage functions tests', function () {
     ];
     expect(expected).toEqual(actual);
   });
+
+  test('Should filter the products by the specific price', () => {
+    const expected = filterByPrice(productObject, 50);
+    const actual = [
+      {
+        id: 5,
+        name: 'Computer mouse',
+        price: 50,
+        category: 'mouse',
+        description:
+          'The mouse is a small, movable device that lets you control a range of things on a computer.',
+        imgUrl: 'http://pngimg.com/uploads/computer_mouse/computer_mouse_PNG7667.png',
+      },
+    ];
+    expect(expected).toEqual(actual);
+  });
+
+  test('Should return products with specific categroy', () => {
+    const expected = filterByCategory(productObject, 'Laptop');
+    const actual = [
+      {
+        id: 1,
+        name: 'Laptop HP',
+        price: 600,
+        category: 'Laptop',
+        description:
+          'HP NoteBook is a Windows 10 laptop with a 15.60-inch display that has a resolution of 1366x768 pixels.',
+        imgUrl: 'http://pngimg.com/uploads/laptop/laptop_PNG101775.png',
+      },
+      {
+        id: 2,
+        name: 'Laptop Asus',
+        price: 800,
+        category: 'Laptop',
+        description:
+          'Asus NoteBook is a Windows 10 laptop with a 15.60-inch display that has a resolution of 1366x768 pixels.',
+        imgUrl: 'http://pngimg.com/uploads/laptop/laptop_PNG101764.png',
+      },
+      {
+        id: 10,
+        name: 'Laptop Samsung',
+        price: 2000,
+        category: 'Laptop',
+        description:
+          'Samsung NoteBook is a Windows 10 laptop with a 15.60-inch display that has a resolution of 1366x768 pixels.',
+        imgUrl: 'http://pngimg.com/uploads/laptop/laptop_PNG101775.png',
+      },
+    ];
+  });
 });
