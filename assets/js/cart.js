@@ -7,16 +7,34 @@ const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 console.log(cart);
 
+document.addEventListener('DOMContentLoaded', () => {
+  const deleteBtns = document.querySelectorAll('.btn-danger');
+
+  deleteBtns.forEach(btn => {
+    btn.addEventListener('click', e => {
+      const itemElement = e.target.parentElement.parentElement;
+      const id = itemElement.getAttribute('data-id');
+
+      console.log(id);
+
+      const newCart = deleteItems(id, cart);
+      localStorage.setItem('cart', JSON.stringify(newCart));
+
+      window.location.reload();
+      itemElement.remove();
+    });
+  });
+});
+
 if (cart.length === 0) {
   cartContainer.innerHTML = `<h2>Your cart is empty</h2>`;
 }
-
-renderCartItems(cart);
 
 function renderCartItems(arr) {
   arr.forEach(item => {
     const itemElement = document.createElement('tr');
     itemElement.classList.add('cart-items');
+    itemElement.setAttribute('data-id', item.id);
     cartContainer.appendChild(itemElement);
 
     const itemImage = document.createElement('td');
@@ -58,6 +76,8 @@ function renderCartItems(arr) {
     deleteContainer.appendChild(deleteButton);
   });
 }
+
+renderCartItems(cart);
 
 // let deleteBtn = document.querySelectorAll('.delete-btn');
 

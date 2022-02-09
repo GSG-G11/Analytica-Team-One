@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const productPrice = productCard.querySelector('.product-card-price').textContent;
       const productImg = productCard.querySelector('.product-card-image img').src;
       addToCart(cartArr, {
+        id: new Date().getTime(),
         name: productName,
         price: productPrice,
         imgUrl: productImg,
