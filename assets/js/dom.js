@@ -1,11 +1,49 @@
 import productObject from './data.js';
-import {filterByCategory, filterByPrice, searchProducts} from './logic.js';
+import {filterByCategory, filterByPrice, searchProducts, addToCart} from './logic.js';
 
 const productsSection = document.querySelector('.products-cards');
 const priceSelect = document.querySelector('.price-select');
 const categorySelect = document.querySelector('.category-select');
 const searchInput = document.getElementsByName('search')[0];
 const heroSection = document.querySelector('.hero');
+const listIcon = document.querySelector('.list-i');
+
+listIcon.addEventListener('click', () => {
+  productsSection.classList.toggle('list');
+});
+const cartIcon = document.querySelector('.fas.fa-shopping-cart');
+
+const cart = localStorage.getItem('cart');
+const cartArr = JSON.parse(cart);
+
+if (!cart) {
+  localStorage.setItem('cart', JSON.stringify([]));
+}
+document.addEventListener('DOMContentLoaded', () => {
+  renderProducts(productObject);
+
+  //Get Cart Buttons
+  const cardBtns = document.querySelectorAll('.product-card-button');
+  cardBtns.forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      console.log('clicked');
+      const productCard = this.parentElement.parentElement.parentElement;
+      const productName = productCard.querySelector('.product-card-title').textContent;
+      const productPrice = productCard.querySelector('.product-card-price').textContent;
+      const productImg = productCard.querySelector('.product-card-image img').src;
+      addToCart(cartArr, {
+        name: productName,
+        price: productPrice,
+        imgUrl: productImg,
+      });
+      //Add product to local storage
+      localStorage.setItem('cart', JSON.stringify(cartArr));
+    });
+  });
+
+  console.log(cartArr);
+  cartIcon.setAttribute('data-count', `${cartArr.length}`);
+});
 
 //Render Products
 function renderProducts(arr) {
@@ -113,5 +151,3 @@ const hero = `<section class="hero" id="deal">
   </div>
 </div>
 </section>`;
-
-renderProducts(productObject);

@@ -18,4 +18,12 @@ function searchProducts(arr, str) {
   return searchArr;
 }
 
-export {filterByCategory, filterByPrice, searchProducts};
+function addToCart(arr, product) {
+  arr.push(product);
+  return arr;
+}
+
+export {filterByCategory, filterByPrice, searchProducts, addToCart};
+//To test Uncomment the following code:
+// module.exports = {filterByCategory, filterByPrice, searchProducts, addToCart};
+

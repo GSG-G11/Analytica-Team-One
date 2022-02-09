@@ -58,24 +58,6 @@ input[type='search'] {
   border-radius: 6px;
   border: 1px solid #ddd;
 }
-/* btn to go sellers
-.seller-button {
-  padding: 10px 16px;
-  border-radius: 20px;
-  outline: none;
-  font-size: 1rem;
-  border: none;
-  cursor: pointer;
-  background-color: #1f8bff;
-  color: #fff;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-  transition: all 0.4s ease-in-out;
-}
-
-.seller-button:hover {
-  background-color: red;
-  transform: scale(1.05);
-} */
 .cart {
   width: 10%;
   color: var(--main-color);
@@ -86,7 +68,7 @@ input[type='search'] {
 }
 
 .cart::after {
-  content: '1';
+  content: attr(data-count);
   color: white;
   font-size: 1rem;
   text-align: center;
@@ -115,6 +97,7 @@ input[type='search'] {
   font-size: 18px;
   font-weight: 500;
 }
+
 /* End Nav Section */
 
 /* Start header section */
@@ -417,6 +400,11 @@ li {
   position: relative;
 }
 
+.products-cards.list {
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 2.4rem;
+}
+
 .products-cards::after {
   clip-path: polygon(100% 25%, 0 55%, 100% 75%);
 
@@ -444,10 +432,20 @@ li {
   height: 30rem;
 }
 
+.list .product-card {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
 .product-card-image {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.list .product-card-image {
+  justify-content: flex-start;
+  flex-basis: 85%;
 }
 
 .product-card-image img {
@@ -471,10 +469,21 @@ li {
   bottom: -10%;
   transition: all 0.3s ease-in-out;
 }
+
+.list .product-card .product-card-info {
+  align-self: flex-start;
+}
 .product-card:hover .product-card-info {
   opacity: 1;
   visibility: visible;
   bottom: 5%;
+  transition: all 0.4s ease-in-out;
+}
+
+.list .product-card:hover .product-card-info {
+  opacity: 1;
+  visibility: visible;
+  bottom: 33%;
   transition: all 0.4s ease-in-out;
 }
 
@@ -489,6 +498,13 @@ li {
   padding: 0 1.2rem;
 }
 
+.list .product-card:hover .product-card-info .product-card-description {
+  white-space: pre-line;
+  word-wrap: break-word;
+  flex-wrap: wrap;
+  width: 50%;
+  align-self: center;
+}
 .product-card-price {
   font-size: 1.2rem;
   font-weight: 600;
@@ -499,6 +515,11 @@ li {
   align-items: center;
   align-self: stretch;
   padding: 0 2.4rem;
+}
+
+.list .product-card .product-card-footer {
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
 .product-card-button {
