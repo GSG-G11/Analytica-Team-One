@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const productPrice = productCard.querySelector('.product-card-price').textContent;
       const productImg = productCard.querySelector('.product-card-image img').src;
       addToCart(cartArr, {
+        id: new Date().getTime(),
         name: productName,
         price: productPrice,
         imgUrl: productImg,
@@ -151,3 +152,40 @@ const hero = `<section class="hero" id="deal">
   </div>
 </div>
 </section>`;
+
+// delete item from cart
+let removeItem = document.getElementsByClassName('btn-danger');
+for (let i = 0; i < removeItem.length; i++) {
+  let button = removeItem[i];
+  button.addEventListener('click', e => {
+    let buttonClicked = e.target;
+    // buttonClicked.parentElement.parentElement.remove();
+    // updateCartTotal();
+  });
+}
+
+let qty = document.getElementsByClassName('Quantity-cart');
+for (let i = 0; i < qty.length; i++) {
+  let inputQty = qty[i];
+  inputQty.addEventListener('change', quantityChange);
+}
+
+function quantityChange(e) {
+  let input = e.target;
+  if (isNaN(input.value) || input.value <= 0) {
+    input.value;
+  }
+  updateCartTotal();
+}
+function updateCartTotal() {
+  let cartRows = document.getElementsByClassName('cart-items');
+  let total = 0;
+  for (let i = 0; i < cartRows.length; i++) {
+    let price = document.getElementsByClassName('price');
+    let Quantity = document.getElementsByClassName('Quantity-cart');
+    let priceItem = Number(price[i].innerText.replace('$', ''));
+    let QuantityVal = Number(Quantity[i].value);
+    total = total + priceItem * QuantityVal;
+  }
+  document.getElementsByClassName('cart-total-price')[0].innerText = total;
+}

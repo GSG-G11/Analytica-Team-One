@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,152 +8,162 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
     />
     <!-- Font Awesome -->
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="./assets/css/style.css" />
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
     <!-- link css  -->
-    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="cart.css" />
+    <script type="module" defer src="../assets/js/cart.js"></script>
     <title>My Cart</title>
-    </head>
-
-
-
-
-    <body>
-         <!-- Start Navbar section -->
+  </head>
+  <body>
+    <!-- Start Navbar section -->
     <nav>
-        <a href="#" class="logo"><img src="img/logo.png" alt="logo-img" /></a>
-        <form action="">
-          <input type="search" id="search" name="search" placeholder="Search" />
-          <!-- <i class="fas fa-search "></i> -->
-        </form>
-        <a href="./cart/cart.html" class="cart" id="cart">
-          <i class="fas fa-shopping-cart"></i>
-        </a>
-      </nav>
-      <!-- End navbar Section -->
-      <!-- start header Section -->
-      <header>
-        <div class="container">
-          <ul class="menu">
-            <li><a href="#" class="link active">Home</a></li>
-            <li><a href="#" class="link">Deals</a></li>
-            <li><a href="#" class="link">Product</a></li>
-            <li><a href="#" class="link">Contact us</a></li>
-          </ul>
-        </div>
-      </header>
-  
-      <!-- end header section -->
+      <a href="../index.html" class="logo"><img src="../img/logo.png" alt="logo-img" /></a>
+      <form action="">
+        <input type="search" id="search" name="search" placeholder="Search" />
+        <!-- <i class="fas fa-search "></i> -->
+      </form>
+      <a href="./cart/cart.html" class="cart" id="cart">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+    </nav>
+    <!-- End navbar Section -->
+    <!-- start header Section -->
+    <header>
+      <div class="container">
+        <ul class="menu">
+          <li><a href="#" class="link active">Home</a></li>
+          <li><a href="#" class="link">Deals</a></li>
+          <li><a href="#" class="link">Product</a></li>
+          <li><a href="#" class="link">Contact us</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- end header section -->
 
     <!-- start section  -->
     <div class="section">
-        <div class="countainer">
-            <table>
-                <tr>
-                    <th class="cart-head"> Product </th>
-                    <th class="cart-head"> The name</th>
-                    <th class="cart-head"> Delete </th>
-                    <th class="cart-head"> Price</th>
-                    <th class="cart-head"> Total price</th>
-                </tr>
+      <div class="countainer">
+        <table class="cart-container-items">
+          <tr>
+            <th class="cart-head">Product</th>
+            <th class="cart-head">The name</th>
+            <th class="cart-head">Price</th>
+            <th class="cart-head">Quantity</th>
+            <th class="cart-head">Delete</th>
+          </tr>
 
-                <tr>
-                    <td><div><img src="imags/clock.jpg" alt=""></div>
-                    </td>
-                    <td>clock</td>
-                    <td><button>Delete</button></td>
-                    <td><p>30$</p></td>
-                    <td><p>30$</p></td>
-                </tr>
-
-                <tr>
+          <!-- <tr class="cart-items">
+            <td>
+              <div><img src="imags/clock.jpg" alt="" /></div>
+            </td>
+            <td>clock</td>
+            <td><p class="price">30$</p></td>
+            <td>
+              <input type="number" name="qyt" class="Quantity-cart" value="2" />
+            </td>
+            <td><button class="btn-danger">Delete</button></td>
+          </tr> -->
+          <!-- 
+                <tr class="cart-items">
                     <td> <div><img src="imags/ausines-genesis-gaming-headset-neon-360-stereo-built-in-microphone--black-red--w_310820220043_3306054.png" 
                     alt=""></div></td>
                     <td>Headphones</td>
-                    <td><button>Delete</button></td>
-                    <td><p>50$</p></td>
-                    <td><p>50$</p></td>
+                    <td><p class="price">50$</p></td>
+                    <td>
+                        <input type="number" name="qyt" class="Quantity-cart" value="2">
+                    </td>
+                    <td><button class="btn-danger">Delete</button></td>
+
                 </tr>
-                <tr>
+                <tr class="cart-items">
                     <td><div><img src="imags/pic_product_indi_01.png" alt="" class="cam"></div></td>
                     <td>Camera</td>
-                    <td><button>Delete</button></td>
-                    <td><p>70$</p></td>
-                    <td><p>70$</p></td>
+                    <td ><p  class="price">70$</p></td>
+                    <td>
+                        <input type="number" name="qyt" class="Quantity-cart" value="2">
+                    </td>
+                    <td><button class="btn-danger">Delete</button></td>
+
                 </tr>
-                
-                
-            </table>
+                 -->
+        </table>
+
+        <div class="container">
+          <div class="cart-total" style="margin-top: 2.4rem">
+            <strong class="cart-total-title"> Total:</strong>
+            <span class="cart-total-price">39.5</span>
+          </div>
         </div>
+      </div>
     </div>
     <!-- End section  -->
 
     <footer id="footer">
-        <div class="top-footer">
-          <div class="footer-part">
-            <p class="footer-part-title">Get to Know Us</p>
-            <ul class="footer-links">
-              <li class="footer-link">About us</li>
-              <li class="footer-link">Our Services</li>
-              <li class="footer-link">Stores</li>
-              <li class="footer-link">Contact us</li>
-              <li class="footer-link">Order Tracking</li>
-            </ul>
+      <div class="top-footer">
+        <div class="footer-part">
+          <p class="footer-part-title">Get to Know Us</p>
+          <ul class="footer-links">
+            <li class="footer-link">About us</li>
+            <li class="footer-link">Our Services</li>
+            <li class="footer-link">Stores</li>
+            <li class="footer-link">Contact us</li>
+            <li class="footer-link">Order Tracking</li>
+          </ul>
+        </div>
+        <div class="footer-part">
+          <p class="footer-part-title">Customer Service</p>
+          <ul class="footer-links">
+            <li class="footer-link">My account</li>
+            <li class="footer-link">Order Tracking</li>
+            <li class="footer-link">Pricing Plans</li>
+            <li class="footer-link">Terms & Conditions</li>
+            <li class="footer-link">Our Team</li>
+            <li class="footer-link">FAQ</li>
+          </ul>
+        </div>
+        <div class="footer-part">
+          <p class="footer-part-title">Quick Links</p>
+          <ul class="footer-links">
+            <li class="footer-link">Smartphones</li>
+            <li class="footer-link">Headphones</li>
+            <li class="footer-link">Laptop & Tablet</li>
+            <li class="footer-link">Gadgets</li>
+          </ul>
+        </div>
+
+        <div class="sign-up">
+          <p class="footer-part-title">Sign up to Newsletter</p>
+          <div class="sign-up-form">
+            <input type="email" placeholder="Your Email Address.." class="sign-up-input" />
+            <i class="fab fa-telegram"></i>
           </div>
-          <div class="footer-part">
-            <p class="footer-part-title">Customer Service</p>
-            <ul class="footer-links">
-              <li class="footer-link">My account</li>
-              <li class="footer-link">Order Tracking</li>
-              <li class="footer-link">Pricing Plans</li>
-              <li class="footer-link">Terms & Conditions</li>
-              <li class="footer-link">Our Team</li>
-              <li class="footer-link">FAQ</li>
-            </ul>
-          </div>
-          <div class="footer-part">
-            <p class="footer-part-title">Quick Links</p>
-            <ul class="footer-links">
-              <li class="footer-link">Smartphones</li>
-              <li class="footer-link">Headphones</li>
-              <li class="footer-link">Laptop & Tablet</li>
-              <li class="footer-link">Gadgets</li>
-            </ul>
-          </div>
-  
-          <div class="sign-up">
-            <p class="footer-part-title">Sign up to Newsletter</p>
-            <div class="sign-up-form">
-              <input type="email" placeholder="Your Email Address.." class="sign-up-input" />
-              <i class="fab fa-telegram"></i>
-            </div>
-            <p class="sign-up-ad">
-              Stay up to date with all the actions that we are saved for all our customers
-            </p>
-            <div class="social-links">
-              <i class="fab fa-facebook"></i>
-              <i class="fab fa-twitter"></i>
-              <i class="fab fa-linkedin"></i>
-              <i class="fab fa-pinterest"></i>
-              <i class="fab fa-youtube"></i>
-            </div>
+          <p class="sign-up-ad">
+            Stay up to date with all the actions that we are saved for all our customers
+          </p>
+          <div class="social-links">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-pinterest"></i>
+            <i class="fab fa-youtube"></i>
           </div>
         </div>
-        <div class="bottom-footer">
-          <p class="rights">© 2022 Analytica, All Rights Reserved</p>
-        </div>
-      </footer>
-
-
-   
-    </body>
+      </div>
+      <div class="bottom-footer">
+        <p class="rights">© 2022 Analytica, All Rights Reserved</p>
+      </div>
+    </footer>
+  </body>
 </html>
