@@ -19,3 +19,6 @@ function searchProducts(arr, str) {
 }
 
 export {filterByCategory, filterByPrice, searchProducts};
+
+//To test Uncomment the following code:
+// module.exports = {filterByCategory, filterByPrice, searchProducts};
