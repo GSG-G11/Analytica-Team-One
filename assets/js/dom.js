@@ -8,6 +8,9 @@ const searchInput = document.getElementsByName('search')[0];
 const heroSection = document.querySelector('.hero');
 const listIcon = document.querySelector('.list-i');
 
+listIcon.addEventListener('click', () => {
+  productsSection.classList.toggle('list');
+});
 const cartIcon = document.querySelector('.fas.fa-shopping-cart');
 
 const cart = localStorage.getItem('cart');
