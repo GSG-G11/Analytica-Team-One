@@ -6,6 +6,11 @@ const priceSelect = document.querySelector('.price-select');
 const categorySelect = document.querySelector('.category-select');
 const searchInput = document.getElementsByName('search')[0];
 const heroSection = document.querySelector('.hero');
+const listIcon = document.querySelector('.list-i');
+
+listIcon.addEventListener('click', () => {
+  productsSection.classList.toggle('list');
+});
 
 //Render Products
 function renderProducts(arr) {
