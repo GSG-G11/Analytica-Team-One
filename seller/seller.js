@@ -1,5 +1,4 @@
 import productObject from '../assets/js/data.js';
-import addProduct from '../assets/js/logic.js'
 // add product to data file
 const pName = document.querySelector('#name');
 const pDescription = document.querySelector('#description');
@@ -50,7 +49,11 @@ const addProduct = ev => {
   renderProducts(productStorageArr);
 };
 
-PSubmit.addEventListener('click', addProduct);
+PSubmit.addEventListener('click', () => {
+  if (PSubmit.value === 'Add Product') {
+    addProduct();
+  }
+});
 
 //delete product
 
@@ -63,7 +66,7 @@ function removeProduct(e) {
   const productStorage = localStorage.getItem('products');
   const productStorageArr = JSON.parse(productStorage);
   const index = productStorageArr.findIndex(
-    product => product.id === e.target.parentElement.parentElement.id
+    product => product.id == e.target.parentElement.parentElement.id
   );
   productStorageArr.splice(index, 1);
   localStorage.setItem('products', JSON.stringify(productStorageArr));
@@ -81,6 +84,7 @@ function renderProducts(arr) {
   arr.forEach(product => {
     const productCard = document.createElement('div');
     productCard.classList.add('product-card');
+    productCard.setAttribute('data-id', product.id);
     productsSection.appendChild(productCard);
 
     const icons = document.createElement('div');
@@ -137,9 +141,49 @@ function renderProducts(arr) {
 
 document.addEventListener('DOMContentLoaded', () => {
   const pDelete = document.querySelectorAll('.fa-circle-xmark');
+  const editBtns = document.querySelectorAll('.fa-edit');
 
-  console.log(pDelete);
-  pDelete.forEach(btn => {
-    btn.addEventListener('click', removeProduct);
+  console.log(editBtns);
+
+  editBtns.forEach(editBtn => {
+    editBtn.addEventListener('click', e => {
+      //Take values of the product by data-id and put it in the above form
+      const productId = e.target.parentElement.parentElement.getAttribute('data-id');
+      const product = productStorageArr.find(product => product.id == productId);
+
+      //put values
+      pName.value = product.name;
+      pDescription.value = product.description;
+      pCategory.value = product.category;
+      pPhoto.value = product.imgUrl;
+      pPrice.value = product.price;
+
+      //Scroll to the form
+      window.scrollTo(0, pForm.offsetTop);
+
+      //Update button
+      PSubmit.value = 'Update';
+      PSubmit.addEventListener('click', () => {
+        //update the product
+        product.name = pName.value;
+        product.description = pDescription.value;
+        product.category = pCategory.value;
+        product.imgUrl = pPhoto.value;
+        product.price = pPrice.value;
+
+        //update local storage
+        localStorage.setItem('products', JSON.stringify(productStorageArr));
+
+        //update the page
+        productsSection.innerHTML = '';
+        renderProducts(productStorageArr);
+      });
+
+      console.log(productId);
+    });
+
+    pDelete.forEach(btn => {
+      btn.addEventListener('click', removeProduct);
+    });
   });
 });

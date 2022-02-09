@@ -538,12 +538,10 @@ li {
   background-color: var(--tint);
 }
 
-
 .product-card-button:active {
   transform: translateY(2px);
   background-color: rgb(10, 202, 10);
 }
-
 
 .delete-edit {
   margin-top: -100px;
@@ -569,11 +567,6 @@ li {
   background-color: #0059a6;
 
   margin-right: 50px;
-}
-.delete-edit i {
-  width: 200px;
-  height: 30px;
-  display: block;
 }
 
 @media screen and (max-width: 976px) {
@@ -626,5 +619,5 @@ li {
   }
   .product-card-info {
     right: -25%;
-
+  }
 }
