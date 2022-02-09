@@ -400,7 +400,7 @@ li {
   position: relative;
 }
 
-.list {
+.products-cards.list {
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 2.4rem;
 }

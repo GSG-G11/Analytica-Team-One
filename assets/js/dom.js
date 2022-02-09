@@ -19,11 +19,6 @@ const cartArr = JSON.parse(cart);
 if (!cart) {
   localStorage.setItem('cart', JSON.stringify([]));
 }
-
-listIcon.addEventListener('click', () => {
-  productsSection.classList.toggle('list');
-});
-
 document.addEventListener('DOMContentLoaded', () => {
   renderProducts(productObject);
 
