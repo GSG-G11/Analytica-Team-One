@@ -68,7 +68,7 @@ input[type='search'] {
 }
 
 .cart::after {
-  content: '1';
+  content: attr(data-count);
   color: white;
   font-size: 1rem;
   text-align: center;

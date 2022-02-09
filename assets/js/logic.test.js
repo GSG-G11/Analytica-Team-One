@@ -1,4 +1,4 @@
-const {filterByCategory, filterByPrice, searchProducts} = require('./logic');
+const {filterByCategory, filterByPrice, searchProducts, addToCart} = require('./logic');
 
 const productObject = [
   {
@@ -108,6 +108,12 @@ describe('Homepage functions tests', function () {
         imgUrl: 'http://pngimg.com/uploads/computer_mouse/computer_mouse_PNG7667.png',
       },
     ];
+    expect(expected).toEqual(actual);
+  });
+
+  test('Should add products to card', () => {
+    const expected = addToCart(productObject, productObject[0]);
+    const actual = productObject;
     expect(expected).toEqual(actual);
   });
 
