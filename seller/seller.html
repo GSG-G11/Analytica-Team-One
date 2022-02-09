@@ -48,14 +48,14 @@
     <div class="container2">
       <form id="form">
         <label for="name">Product Name</label>
-        <input type="text" id="name" name="name" placeholder="Your Product name.." />
+        <input type="text" id="name" name="name" placeholder="Your Product name.." required />
 
         <label for="description">Description</label>
         <textarea
           id="description"
           name="description"
           placeholder="Your Product description.."
-          style="height: 100px"
+          style="height: 100px" required
         ></textarea>
 
         <label for="category">Category</label>
@@ -68,7 +68,7 @@
         </select>
 
         <label for="photo">Image URL</label>
-        <input type="text" id="photo" />
+        <input type="text" id="photo"  required/>
 
         <label for="Price">Price</label>
         <input
@@ -76,7 +76,7 @@
           id="Price"
           name="Price"
           style="width: 25%; margin-left: 20px"
-          placeholder="Your Product Price.."
+          placeholder="Your Product Price.." required
         />
 
         <input type="submit" id="submit" value="Add Product" />
