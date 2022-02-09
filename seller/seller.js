@@ -8,6 +8,7 @@ const pPrice = document.querySelector('#Price');
 const PSubmit = document.querySelector('#submit');
 const pForm = document.getElementById('form');
 const productsSection = document.querySelector('.products-cards');
+const pDelete = document.getElementsByClassName('fa-solid')
 
 let arr = [...productObject];
 
@@ -51,6 +52,18 @@ const addProduct = ev => {
 
 PSubmit.addEventListener('click', addProduct);
 
+
+//delete product
+
+function removeProduct(e){
+  // localStorage.removeItem(e);
+  e.target.parentElement.parentElement.parentElement.remove();
+}
+
+
+
+
+
 // add products to seller page
 
 const priceSelect = document.querySelector('.price-select');
@@ -75,10 +88,6 @@ function renderProducts(arr) {
     edit.classList.add("fas","fa-edit")
     icons.appendChild(edit)
     productCard.appendChild(icons);
-
-
-
-
 
     const productImageDiv = document.createElement('div');
     productImageDiv.classList.add('product-card-image');
@@ -120,4 +129,8 @@ function renderProducts(arr) {
     productAddCartIcon.classList.add('fas', 'fa-cart-plus');
     productAddCart.appendChild(productAddCartIcon);
   });
+
+  pDelete[0].addEventListener("click", removeProduct)
+
 }
+
