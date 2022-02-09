@@ -1,4 +1,5 @@
 import productObject from '../assets/js/data.js';
+import addProduct from '../assets/js/logic.js'
 // add product to data file
 const pName = document.querySelector('#name');
 const pDescription = document.querySelector('#description');
