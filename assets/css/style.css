@@ -387,9 +387,10 @@ li {
   padding: 0.8rem;
   border: none;
   outline: none;
-  background-color: #aaa;
+  background-color: #efefef;
   border-radius: 10px;
   cursor: pointer;
+  border: #007aff solid 2px;
 }
 
 .products-cards {
@@ -532,16 +533,24 @@ li {
   color: white;
   cursor: pointer;
 }
-
-.product-card-button:hover {
+.product-card-button:hover,
+.product-card-button:focus {
   background-color: var(--tint);
 }
+
+
+.product-card-button:active {
+  transform: translateY(2px);
+  background-color: rgb(10, 202, 10);
+}
+
 
 .delete-edit {
   margin-top: -100px;
   width: 250px;
   display: flex;
   flex-direction: column;
+
   align-items: flex-start;
   margin-right: 3.2rem;
   gap: 0.4rem;
@@ -558,4 +567,64 @@ li {
 
 .delete-edit i:hover {
   background-color: #0059a6;
+
+  margin-right: 50px;
+}
+.delete-edit i {
+  width: 200px;
+  height: 30px;
+  display: block;
+}
+
+@media screen and (max-width: 976px) {
+  html {
+    font-size: 80%;
+  }
+
+  .info-hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .clickable .btn {
+    padding: 0.8rem 1.6rem;
+  }
+
+  .product-card-image {
+    flex-basis: 10%;
+  }
+  .product-card-info {
+    right: -21%;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  .product-card-info {
+    right: -13%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 42.5%;
+  }
+
+  .clickable .btn {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .container {
+    overflow: hidden;
+  }
+
+  .product-card-image img {
+    width: 15rem;
+  }
+  .product-card-info {
+    right: -25%;
+
 }
