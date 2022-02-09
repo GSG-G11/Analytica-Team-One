@@ -49,12 +49,7 @@ const addProduct = ev => {
   renderProducts(productStorageArr);
 };
 
-PSubmit.addEventListener('click', () => {
-  if (PSubmit.value === 'Add Product') {
-    addProduct();
-  }
-});
-
+PSubmit.addEventListener('click', addProduct);
 //delete product
 
 function removeProduct(e) {
