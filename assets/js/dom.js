@@ -1,7 +1,12 @@
 import productObject from './data.js';
 
 const productsSection = document.querySelector('.products-cards');
+const priceSelect = document.querySelector('.price-select');
+const categorySelect = document.querySelector('.category-select');
 
+console.log(priceSelect);
+
+//Render Products
 function renderProducts(arr) {
   arr.forEach(product => {
     const productCard = document.createElement('div');
@@ -49,5 +54,41 @@ function renderProducts(arr) {
     productAddCart.appendChild(productAddCartIcon);
   });
 }
+
+function clearInput(element) {
+  element.innerHTML = '';
+}
+
+function filterByCategory(arr, category) {
+  const filteredArr = arr.filter(
+    product => product.category.toLowerCase() === category.toLowerCase()
+  );
+  return filteredArr;
+}
+
+function filterByPrice(arr, price) {
+  const filteredArr = arr.filter(product => product.price <= price);
+  return filteredArr;
+}
+
+categorySelect.addEventListener('change', e => {
+  const categoryValue = e.target.value;
+  if (categoryValue === '') {
+    clearInput(productsSection);
+    return renderProducts(productObject);
+  }
+  clearInput(productsSection);
+  renderProducts(filterByCategory(productObject, categoryValue));
+});
+
+priceSelect.addEventListener('change', e => {
+  const price = e.target.value;
+  if (price === '') {
+    clearInput(productsSection);
+    return renderProducts(productObject);
+  }
+  clearInput(productsSection);
+  renderProducts(filterByPrice(productObject, price));
+});
 
 renderProducts(productObject);
