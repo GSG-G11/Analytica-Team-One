@@ -1,4 +1,4 @@
-const {filterByCategory, filterByPrice, searchProducts, addToCart} = require('./logic');
+const {filterByCategory, filterByPrice, searchProducts, addToCart, addProduct} = require('./logic');
 
 const productObject = [
   {
@@ -113,6 +113,13 @@ describe('Homepage functions tests', function () {
 
   test('Should add products to card', () => {
     const expected = addToCart(productObject, productObject[0]);
+    const actual = productObject;
+    expect(expected).toEqual(actual);
+  });
+
+//product test
+  test('Should add products to array to push', () => {
+    const expected = addProduct(productObject, productObject[0]);
     const actual = productObject;
     expect(expected).toEqual(actual);
   });

@@ -23,7 +23,13 @@ function addToCart(arr, product) {
   return arr;
 }
 
-export {filterByCategory, filterByPrice, searchProducts, addToCart};
+
+function addProduct(arr, product) {
+  arr.push(product);
+  return arr;
+}
+
+export {filterByCategory, filterByPrice, searchProducts, addToCart, addProduct};
 //To test Uncomment the following code:
 // module.exports = {filterByCategory, filterByPrice, searchProducts, addToCart};
 
