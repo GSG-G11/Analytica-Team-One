@@ -6,9 +6,17 @@ const pCategory = document.querySelector("#category");
 const pPhoto = document.querySelector("#photo");
 const pPrice = document.querySelector("#Price");
 const PSubmit = document.querySelector("#submit");
-const pForm = document.getElementById("form")
+const pForm = document.getElementById("form");
+const productsSection = document.querySelector('.products-cards');
+
 
 let arr=[...productObject];
+
+//get data from local storage 
+localStorage.setItem('products', JSON.stringify(arr)) // to add datd file to local storage 
+const productStorage = localStorage.getItem('products'); // to get data in local storage 
+const productStorageArr = JSON.parse(productStorage); // to convert to array of object
+
 
 //add new object to array include the new product detailes
 
@@ -23,9 +31,14 @@ const addProduct = (ev)=> {
         imgUrl : pPhoto.value
     }
 
-    arr.push(product);
+    productStorageArr.push(product);
     pForm.reset();
     // console.log(arr);
+
+    //add product to local storage
+    localStorage.setItem('products',JSON.stringify(productStorageArr));
+    productsSection.innerHTML='';
+    renderProducts(productStorageArr);
 }
 
 PSubmit.addEventListener('click', addProduct)
@@ -33,7 +46,6 @@ PSubmit.addEventListener('click', addProduct)
 
 // add products to seller page
 
-const productsSection = document.querySelector('.products-cards');
 const priceSelect = document.querySelector('.price-select');
 const categorySelect = document.querySelector('.category-select');
 const searchInput = document.getElementsByName('search')[0];
@@ -88,4 +100,4 @@ function renderProducts(arr) {
   });
 }
 
-renderProducts(productObject);
+renderProducts(productStorageArr);
