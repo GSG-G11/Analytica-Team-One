@@ -1,3 +1,5 @@
+const {filterByCategory, filterByPrice, searchProducts} = require('./logic');
+
 const productObject = [
   {
     id: 1,
