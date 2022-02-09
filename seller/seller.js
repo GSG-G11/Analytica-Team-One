@@ -58,12 +58,27 @@ const categorySelect = document.querySelector('.category-select');
 const searchInput = document.getElementsByName('search')[0];
 const heroSection = document.querySelector('.hero');
 
+
 //Render Products
 function renderProducts(arr) {
   arr.forEach(product => {
     const productCard = document.createElement('div');
     productCard.classList.add('product-card');
     productsSection.appendChild(productCard);
+
+    const icons = document.createElement('div');
+    icons.classList.add('delete-edit');
+    const dele = document.createElement("i")
+    dele.classList.add("fa-solid","fa-circle-xmark")
+    icons.appendChild(dele)
+    const edit = document.createElement("i")
+    edit.classList.add("fas","fa-edit")
+    icons.appendChild(edit)
+    productCard.appendChild(icons);
+
+
+
+
 
     const productImageDiv = document.createElement('div');
     productImageDiv.classList.add('product-card-image');

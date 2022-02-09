@@ -536,3 +536,22 @@ li {
 .product-card-button:hover {
   background-color: var(--tint);
 }
+
+.delete-edit{
+  margin-top: -100px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 50px;
+
+}
+.delete-edit i{
+  width: 200px;
+  height: 30px;
+  display: block;
+
+}
+
+
+
+
