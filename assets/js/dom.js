@@ -6,6 +6,12 @@ const priceSelect = document.querySelector('.price-select');
 const categorySelect = document.querySelector('.category-select');
 const searchInput = document.getElementsByName('search')[0];
 const heroSection = document.querySelector('.hero');
+
+const listIcon = document.querySelector('.list-i');
+
+listIcon.addEventListener('click', () => {
+  productsSection.classList.toggle('list');
+
 const cartIcon = document.querySelector('.fas.fa-shopping-cart');
 
 const cart = localStorage.getItem('cart');
@@ -39,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   console.log(cartArr);
   cartIcon.setAttribute('data-count', `${cartArr.length}`);
+
 });
 
 //Render Products
