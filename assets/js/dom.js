@@ -109,6 +109,10 @@ searchInput.addEventListener('keyup', () => {
   }
 
   const searchArr = searchProducts(productObject, searchInput.value);
+
+  if (searchArr.length === 0) {
+    productsSection.innerHTML = '<h2>No results</h2>';
+  }
   renderProducts(searchArr);
 });
 
