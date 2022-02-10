@@ -4,7 +4,7 @@
   "description": "Ecommerce Project made by: Abedalrahman Shamia, Amran Elmasri, Braa Ferwana, Najlaa Abuouda",
   "main": "./assets/js/logic.js",
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest "
   },
   "repository": {
     "type": "git",
