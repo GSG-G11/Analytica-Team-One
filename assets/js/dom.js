@@ -20,8 +20,6 @@ if (!cart) {
   localStorage.setItem('cart', JSON.stringify([]));
 }
 document.addEventListener('DOMContentLoaded', () => {
-  renderProducts(productObject);
-
   //Get Cart Buttons
   const cardBtns = document.querySelectorAll('.product-card-button');
   cardBtns.forEach(btn => {
@@ -154,13 +152,4 @@ const hero = `<section class="hero" id="deal">
 </div>
 </section>`;
 
-// delete item from cart
-let removeItem = document.getElementsByClassName('btn-danger');
-for (let i = 0; i < removeItem.length; i++) {
-  let button = removeItem[i];
-  button.addEventListener('click', e => {
-    let buttonClicked = e.target;
-    // buttonClicked.parentElement.parentElement.remove();
-    // updateCartTotal();
-  });
-}
+renderProducts(productObject);
