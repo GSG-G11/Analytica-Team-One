@@ -1,216 +1,216 @@
-const {filterByCategory, filterByPrice, searchProducts, addToCart, addProduct, deleteItems} = require('./logic');
-
+const {
+  filterByCategory,
+  filterByPrice,
+  searchProducts,
+  addToCart,
+  addProduct,
+  deleteItems,
+} = require('./logic');
 
 const productObject = [
   {
     id: 1,
-    name: "Laptop HP",
+    name: 'Laptop HP',
     price: 600,
-    category: "Laptop",
+    category: 'Laptop',
     description:
-      "HP NoteBook is a Windows 10 laptop with a 15.60-inch display that has a resolution of 1366x768 pixels.",
-    imgUrl: "http://pngimg.com/uploads/laptop/laptop_PNG101775.png",
+      'HP NoteBook is a Windows 10 laptop with a 15.60-inch display that has a resolution of 1366x768 pixels.',
+    imgUrl: 'http://pngimg.com/uploads/laptop/laptop_PNG101775.png',
   },
   {
     id: 2,
-    name: "Laptop Asus",
+    name: 'Laptop Asus',
     price: 800,
-    category: "Laptop",
+    category: 'Laptop',
     description:
-      "Asus NoteBook is a Windows 10 laptop with a 15.60-inch display that has a resolution of 1366x768 pixels.",
-    imgUrl: "http://pngimg.com/uploads/laptop/laptop_PNG101764.png",
+      'Asus NoteBook is a Windows 10 laptop with a 15.60-inch display that has a resolution of 1366x768 pixels.',
+    imgUrl: 'http://pngimg.com/uploads/laptop/laptop_PNG101764.png',
   },
   {
     id: 3,
-    name: "Computer desktop PC",
+    name: 'Computer desktop PC',
     price: 1000,
-    category: "Computer",
+    category: 'Computer',
     description:
-      "Scaled appropriately to support delivered system with reasonable growth potential (In Win CE685 PC case with 300 watt 80PLUS certified power supply.",
-    imgUrl: "http://pngimg.com/uploads/computer_pc/computer_pc_PNG7703.png",
+      'Scaled appropriately to support delivered system with reasonable growth potential (In Win CE685 PC case with 300 watt 80PLUS certified power supply.',
+    imgUrl: 'http://pngimg.com/uploads/computer_pc/computer_pc_PNG7703.png',
   },
   {
     id: 4,
-    name: "Computer desktop",
+    name: 'Computer desktop',
     price: 700,
-    category: "Computer",
+    category: 'Computer',
     description:
-      "Microsoft Windows 7 Home Basic(or other least expensive Microsoft Windows operating system.",
-    imgUrl: "http://pngimg.com/uploads/computer_pc/computer_pc_PNG7706.png",
+      'Microsoft Windows 7 Home Basic(or other least expensive Microsoft Windows operating system.',
+    imgUrl: 'http://pngimg.com/uploads/computer_pc/computer_pc_PNG7706.png',
   },
   {
     id: 5,
-    name: "Computer mouse",
+    name: 'Computer mouse',
     price: 50,
-    category: "mouse",
+    category: 'mouse',
     description:
-      "The mouse is a small, movable device that lets you control a range of things on a computer.",
-    imgUrl:
-      "http://pngimg.com/uploads/computer_mouse/computer_mouse_PNG7667.png",
+      'The mouse is a small, movable device that lets you control a range of things on a computer.',
+    imgUrl: 'http://pngimg.com/uploads/computer_mouse/computer_mouse_PNG7667.png',
   },
   {
     id: 6,
-    name: "Headphones",
+    name: 'Headphones',
     price: 200,
-    category: "Headphones",
+    category: 'Headphones',
     description:
-      "Though the competition is stiffer than ever, the Bose QuietComfort 45 headphones.",
-    imgUrl: "http://pngimg.com/uploads/headphones/headphones_PNG7624.png",
+      'Though the competition is stiffer than ever, the Bose QuietComfort 45 headphones.',
+    imgUrl: 'http://pngimg.com/uploads/headphones/headphones_PNG7624.png',
   },
   {
     id: 7,
-    name: "Headphones",
+    name: 'Headphones',
     price: 100,
-    category: "Headphones",
+    category: 'Headphones',
     description:
-      "Though the competition is stiffer than ever, the Bose QuietComfort 45 headphones.",
-    imgUrl: "http://pngimg.com/uploads/headphones/headphones_PNG7622.png",
+      'Though the competition is stiffer than ever, the Bose QuietComfort 45 headphones.',
+    imgUrl: 'http://pngimg.com/uploads/headphones/headphones_PNG7622.png',
   },
   {
     id: 8,
-    name: "Tablet",
+    name: 'Tablet',
     price: 1500,
-    category: "Tablet",
+    category: 'Tablet',
     description:
       "Apple's 2021 base model iPad delivers strong performance and an excellent front-facing camera at a very palatable price.",
-    imgUrl: "http://pngimg.com/uploads/tablet/tablet_PNG8582.png",
+    imgUrl: 'http://pngimg.com/uploads/tablet/tablet_PNG8582.png',
   },
   {
     id: 9,
-    name: "Tablet",
+    name: 'Tablet',
     price: 1000,
-    category: "Tablet",
+    category: 'Tablet',
     description:
       "Apple's 2021 base model iPad delivers strong performance and an excellent front-facing camera at a very palatable price.",
-    imgUrl: "http://pngimg.com/uploads/tablet/tablet_PNG8587.png",
+    imgUrl: 'http://pngimg.com/uploads/tablet/tablet_PNG8587.png',
   },
   {
     id: 10,
-    name: "Laptop Samsung",
+    name: 'Laptop Samsung',
     price: 2000,
-    category: "Laptop",
+    category: 'Laptop',
     description:
-      "Samsung NoteBook is a Windows 10 laptop with a 15.60-inch display that has a resolution of 1366x768 pixels.",
-    imgUrl: "http://pngimg.com/uploads/laptop/laptop_PNG101775.png",
+      'Samsung NoteBook is a Windows 10 laptop with a 15.60-inch display that has a resolution of 1366x768 pixels.',
+    imgUrl: 'http://pngimg.com/uploads/laptop/laptop_PNG101775.png',
   },
 ];
 
-describe("Homepage functions tests", function () {
-  test("Should find and return products when searching for it", () => {
-    searchProducts(productObject, "mouse");
-    const expected = searchProducts(productObject, "mouse");
+describe('Homepage functions tests', function () {
+  test('Should find and return products when searching for it', () => {
+    const expected = searchProducts(productObject, 'mouse');
     const actual = [
       {
         id: 5,
-        name: "Computer mouse",
+        name: 'Computer mouse',
         price: 50,
-        category: "mouse",
+        category: 'mouse',
         description:
-          "The mouse is a small, movable device that lets you control a range of things on a computer.",
-        imgUrl:
-          "http://pngimg.com/uploads/computer_mouse/computer_mouse_PNG7667.png",
+          'The mouse is a small, movable device that lets you control a range of things on a computer.',
+        imgUrl: 'http://pngimg.com/uploads/computer_mouse/computer_mouse_PNG7667.png',
       },
     ];
     expect(expected).toEqual(actual);
   });
 
-  test("Should add products to cart", () => {
+  test('Should add products to cart', () => {
     const expected = addToCart(productObject, productObject[0]);
     const actual = productObject;
     expect(expected).toEqual(actual);
   });
 
-
-//product test
+  //product test
   test('Should add products to array to push', () => {
     const expected = addProduct(productObject, productObject[0]);
     const actual = productObject;
     expect(expected).toEqual(actual);
   });
 
-  test("Should filter the products by the specific price", () => {
-
+  test('Should filter the products by the specific price', () => {
     const expected = filterByPrice(productObject, 50);
     const actual = [
       {
         id: 5,
-        name: "Computer mouse",
+        name: 'Computer mouse',
         price: 50,
-        category: "mouse",
+        category: 'mouse',
         description:
-          "The mouse is a small, movable device that lets you control a range of things on a computer.",
-        imgUrl:
-          "http://pngimg.com/uploads/computer_mouse/computer_mouse_PNG7667.png",
+          'The mouse is a small, movable device that lets you control a range of things on a computer.',
+        imgUrl: 'http://pngimg.com/uploads/computer_mouse/computer_mouse_PNG7667.png',
       },
     ];
     expect(expected).toEqual(actual);
   });
 
-  test("Should return products with specific categroy", () => {
-    const expected = filterByCategory(productObject, "Laptop");
+  test('Should return products with specific categroy', () => {
+    const expected = filterByCategory(productObject, 'Laptop');
     const actual = [
       {
         id: 1,
-        name: "Laptop HP",
+        name: 'Laptop HP',
         price: 600,
-        category: "Laptop",
+        category: 'Laptop',
         description:
-          "HP NoteBook is a Windows 10 laptop with a 15.60-inch display that has a resolution of 1366x768 pixels.",
-        imgUrl: "http://pngimg.com/uploads/laptop/laptop_PNG101775.png",
+          'HP NoteBook is a Windows 10 laptop with a 15.60-inch display that has a resolution of 1366x768 pixels.',
+        imgUrl: 'http://pngimg.com/uploads/laptop/laptop_PNG101775.png',
       },
       {
         id: 2,
-        name: "Laptop Asus",
+        name: 'Laptop Asus',
         price: 800,
-        category: "Laptop",
+        category: 'Laptop',
         description:
-          "Asus NoteBook is a Windows 10 laptop with a 15.60-inch display that has a resolution of 1366x768 pixels.",
-        imgUrl: "http://pngimg.com/uploads/laptop/laptop_PNG101764.png",
+          'Asus NoteBook is a Windows 10 laptop with a 15.60-inch display that has a resolution of 1366x768 pixels.',
+        imgUrl: 'http://pngimg.com/uploads/laptop/laptop_PNG101764.png',
       },
       {
         id: 10,
-        name: "Laptop Samsung",
+        name: 'Laptop Samsung',
         price: 2000,
-        category: "Laptop",
+        category: 'Laptop',
         description:
-          "Samsung NoteBook is a Windows 10 laptop with a 15.60-inch display that has a resolution of 1366x768 pixels.",
-        imgUrl: "http://pngimg.com/uploads/laptop/laptop_PNG101775.png",
+          'Samsung NoteBook is a Windows 10 laptop with a 15.60-inch display that has a resolution of 1366x768 pixels.',
+        imgUrl: 'http://pngimg.com/uploads/laptop/laptop_PNG101775.png',
       },
     ];
   });
 });
 
-describe(" testing delete from local storage", () => {
-  test(" test delete item by id", () => {
+describe(' testing delete from local storage', () => {
+  test(' test delete item by id', () => {
     const expected = [
       {
         id: 2,
-        name: "nn",
+        name: 'nn',
         price: 200,
-        category: "laptop",
+        category: 'laptop',
         description:
-          "Samsung NoteBook is a Windows 10 laptop with a 15.60-inch display that has a resolution of 1366x768 pixels.",
-        imgUrl: "http://pngimg.com/uploads/laptop/laptop_PNG101775.png",
+          'Samsung NoteBook is a Windows 10 laptop with a 15.60-inch display that has a resolution of 1366x768 pixels.',
+        imgUrl: 'http://pngimg.com/uploads/laptop/laptop_PNG101775.png',
       },
     ];
     const actual = deleteItems(1, [
       {
         id: 1,
-        name: "nn",
+        name: 'nn',
         price: 200,
-        category: "laptop",
+        category: 'laptop',
         description:
-          "Samsung NoteBook is a Windows 10 laptop with a 15.60-inch display that has a resolution of 1366x768 pixels.",
-        imgUrl: "http://pngimg.com/uploads/laptop/laptop_PNG101775.png",
+          'Samsung NoteBook is a Windows 10 laptop with a 15.60-inch display that has a resolution of 1366x768 pixels.',
+        imgUrl: 'http://pngimg.com/uploads/laptop/laptop_PNG101775.png',
       },
       {
         id: 2,
-        name: "nn",
+        name: 'nn',
         price: 200,
-        category: "laptop",
+        category: 'laptop',
         description:
-          "Samsung NoteBook is a Windows 10 laptop with a 15.60-inch display that has a resolution of 1366x768 pixels.",
-        imgUrl: "http://pngimg.com/uploads/laptop/laptop_PNG101775.png",
+          'Samsung NoteBook is a Windows 10 laptop with a 15.60-inch display that has a resolution of 1366x768 pixels.',
+        imgUrl: 'http://pngimg.com/uploads/laptop/laptop_PNG101775.png',
       },
     ]);
     expect(actual).toEqual(expected);

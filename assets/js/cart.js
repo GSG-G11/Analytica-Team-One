@@ -12,12 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', e => {
       const itemElement = e.target.parentElement.parentElement;
       const id = itemElement.getAttribute('data-id');
-
-      console.log(id);
-
       const newCart = deleteItems(id, cart);
       localStorage.setItem('cart', JSON.stringify(newCart));
-
       window.location.reload();
       itemElement.remove();
     });
@@ -79,13 +75,3 @@ function renderCartItems(arr) {
 }
 
 renderCartItems(cart);
-
-// let deleteBtn = document.querySelectorAll('.delete-btn');
-
-// if (deleteBtn) {
-//   deleteBtn.forEach(ele => {
-//     ele.addEventListener('click', e => {
-//       e.target.parentElement.parentElement.remove();
-//     });
-//   });
-// }
