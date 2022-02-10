@@ -49,13 +49,22 @@ Analytica Store is a website that presents different types of products to sale. 
 ## User Journey <span id="user-journey"></span>
 
 
-- The user will catch up to the latest news as soon as he visits the website.
+- The user will catch up to the latest latest hot deal soon as he visits the website.
 - The user will be able to navigate through sections he would like to visit by clicking on the desired section in the navbar.
-- The user can see the latest and trending articles on the side of the page.
-- The user will be able to get to know more about specific news by clicking on it.
-- The user will be taken to the desired news page.
-- The user can add his comments about those news in the comment section part.
-- The user can browse our website using any device, anywhere.
+- The user will be able to see all available products in the store and its details
+- The user will be able to filter the products by price
+- The user will be able to filter the products by category
+- The user will be able to find products he want by searching.
+- The user will be able to add the wanted product to the cart
+- The user can visit the cart and check the products he put in there.
+- The user can delete any product he does not want in the cart.
+- The user can check the total price of the products
+
+
+- If the user was a seller : 
+- The user will be able to add products through a form.
+- The user will be able edit the desired products.
+- The user will be able to delete the unwanted products.
 
 
 ## User Story <span id="user-stories"></span>
